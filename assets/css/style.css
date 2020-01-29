@@ -1,3 +1,8 @@
+.collapse {
+  float: right;
+  margin-right: 10px;
+}
+
 .card {
   margin: 10px auto;
 }
@@ -21,5 +26,10 @@
 .comment-area .sentiments {
   display: none;
   padding: 10px 15px;
+}
+
+.team-list {
+  list-style: none;
+  font-weight: 700;
 }
 /*# sourceMappingURL=style.css.map */

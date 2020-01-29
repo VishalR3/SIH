@@ -1,3 +1,7 @@
+.collapse{
+    float:right;
+    margin-right: 10px;
+}
 .card{
     margin:10px auto;
 }
@@ -23,4 +27,7 @@
         padding:10px 15px;
     }
 }
-
+.team-list{
+    list-style: none;
+    font-weight: 700;
+}
