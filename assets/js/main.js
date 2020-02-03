@@ -1,3 +1,5 @@
+
+
 $(function() {
   setHeight();
   setStyle();
@@ -32,16 +34,39 @@ $(function() {
 function getSentiment() {
   let val = Math.floor(Math.random() * 3);
   switch (val) {
-    case 0:
+    case 0: countComments(val);
       return "bad";
       break;
-    case 1:
+    case 1: countComments(val);
       return "good";
       break;
-    default:
+    default: countComments(val);
       return "indeterminate";
       break;
   }
+}
+function countComments(data){
+  let total=parseInt($(".total_comment").text());
+  let good=parseInt($(".good_comment").text());
+  let bad=parseInt($(".bad_comment").text());
+  let other=parseInt($(".other_comment").text());
+  switch(data){
+    case 0: total++;
+              bad++;
+              break;
+    case 1: total++;
+              good++;
+              break;
+    default: total++;
+              other++;
+              break;
+  }
+  $(".total_comment").text(total);
+  $(".good_comment").text(good);
+  $(".bad_comment").text(bad);
+  $(".other_comment").text(other);
+  createChart(good,bad,other);
+  
 }
 function setHeight() {
   let height = $("#comment_form").height();
@@ -87,7 +112,7 @@ function setStyle() {
     }
   });
 }
-function createChart() {
+function createChart(good=5347,bad=1244,other=1391) {
   var ctx = document.getElementById("myChart").getContext("2d");
   var myChart = new Chart(ctx, {
     type: "bar",
@@ -96,7 +121,7 @@ function createChart() {
       datasets: [
         {
           label: "# of Sentimental Responses",
-          data: [5347, 1244, 1391],
+          data: [good,bad,other],
           backgroundColor: [
             "rgba(255, 99, 132, 0.6)",
             "rgba(54, 162, 235, 0.6)",
