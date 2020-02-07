@@ -5,6 +5,30 @@
 
 .card {
   margin: 10px auto;
+  /* width */
+}
+
+@media only screen and (min-width: 768px) {
+  .card {
+    /* Track */
+    /* Handle */
+    /* Handle on hover */
+  }
+  .card ::-webkit-scrollbar {
+    width: 10px;
+  }
+  .card ::-webkit-scrollbar-track {
+    background: #ffffff;
+  }
+  .card ::-webkit-scrollbar-track:hover {
+    background: #f1f1f1;
+  }
+  .card ::-webkit-scrollbar-thumb {
+    background: #dddddd;
+  }
+  .card ::-webkit-scrollbar-thumb:hover {
+    background: #aaaaaa;
+  }
 }
 
 #prev_comments {
